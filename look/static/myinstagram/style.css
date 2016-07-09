@@ -1,0 +1,10 @@
+.logged-in {
+    background: gainsboro url("/static/myinstagram/image/English Patient.gif") no-repeat center 80px;
+}
+.logged-out {
+    background: gainsboro url("/static/myinstagram/image/voldemort.jpg") no-repeat center 30px;
+    background-size: 50%;
+}
+.pull-right {
+    float:right;
+}
