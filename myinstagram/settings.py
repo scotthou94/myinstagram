@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+#from look.views import current_user
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
     'stream_django',
 ]
 
@@ -124,14 +126,15 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_REDIRECT_URL = '/'
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'SCOPE': ['email','public_profile','user_friends'],
-        'METHOD': 'js_sdk'  # instead of 'oauth2'
-    }
+    'GitHub': {
+        'SCOPE': ['user'],
+        'REDIRECT_URI': 'http://127.0.0.1:8000/accounts/github/login/callback/'
+        },
+    'Facebook':{'METHOD':'oauth2',
+                'SCOPE':['email','public_profile','user_friends']
+            }
 }
 
-FACEBOOK_APP_ID = '1532707017034654'
-FACEBOOK_API_SECRET = '7c7bcc9be21626789a944c9d13019de9'
 
 SITE_ID = 1
 # Internationalization

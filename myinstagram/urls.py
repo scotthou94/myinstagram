@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^', include('look.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^tweet/', login_required(views.TweetView.as_view()))
+    url(r'^tweet/', login_required(views.TweetView.as_view())),
+    url(r'^user/(?P<user_name>.+)/$', views.user),
 ]

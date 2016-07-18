@@ -1,10 +1,33 @@
 .logged-in {
-    background: gainsboro url("/static/myinstagram/image/English Patient.gif") no-repeat center 80px;
+	background-color: #333;
+	font-family: 'Lobster';
+	color: orange;
+
 }
 .logged-out {
-    background: gainsboro url("/static/myinstagram/image/voldemort.jpg") no-repeat center 30px;
-    background-size: 50%;
+	background-color: #333;
+	text-align: center;
+    font-family: 'Lobster';
+    color: orange;
+
 }
 .pull-right {
-    float:right;
+    color: orange;
+    font-family: 'Lobster';
+}
+.welcome {
+	padding-top: 140px;
+}
+
+/* navigation bar */
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	text-align: left;
+}
+li {
+	display: inline;
+	padding: 8px;
 }
