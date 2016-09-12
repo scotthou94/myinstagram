@@ -1,0 +1,39 @@
+{% load activity_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if request.user.is_authenticated %}Logged In{% else %}Not Logged In{% endif %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/myinstagram/style.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+
+<ul>
+    <li>Myinstagram</li>
+    <li style="float: right"><a href="/accounts/login">My Account</a></li>
+</ul>
+
+<div class = "welcome">
+<div>
+<h1>
+    Welcome to myinstagram
+</h1>
+</div>
+
+<div>
+<h2>
+Please <a class="signin"  href="/accounts/login/" class="logged-out">Signin</a> First
+</h2>
+</div>
+
+</div>
+
+
+
+
+
+
+</body>

@@ -1,1 +1,21 @@
-{{ activity.actor.username }} said "{{ activity.object }}" {{ activity.time|timesince }} ago
+<div class="row">
+	<div class="col-md-3">
+		<div class="username">
+  		{{ activity.actor.username }} said 
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-9 col-md-offset-1">
+		<div class="tweet">
+   		{{ activity.object }}  
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3 col-md-offset-9">
+		<div class="time">
+   		{{ activity.time|timesince }} ago
+		</div>
+	</div>
+</div>

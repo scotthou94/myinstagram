@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/1.9/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
-
+from pytz import timezone 
+import pytz
 import os
 #from look.views import current_user
 
@@ -55,7 +56,7 @@ INSTALLED_APPS = [
 
 STREAM_API_KEY = 'r775t52rdbhh'
 STREAM_API_SECRET = 'bgf2vwjve46uqw5nnj23ss2bkd2fq9y7azvuzmnsveyv4xzu68swj4swt8pwqch9'
-STREAM_NEWS_FEEDS = dict(flat='flat')
+STREAM_NEWS_FEEDS = dict(timeline='timeline')
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

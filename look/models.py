@@ -40,16 +40,24 @@ class Tweet(activity.Activity, models.Model):
     def activity_object_attr(self):
         return self
 
-    def parse_mentions(self):
-        mentions = [slugify(i) for i in self.text.split() if i.startswith("@")]
-        return User.objects.filter(username__in=mentions)
-
+    #parse the text and get a list of hashtags 
+    def parse_hashtags(self):
+        return [slugify(i) for i in self.text.split() if i.startswith("#")]
+   
+   #define the acitivity_notify property
     @property
-    def activity_notify(self):
+    def activivty_notify(self):
         targets = []
         for user in self.parse_mentions():
             targets.append(feed_manager.get_news_feeds(user.id)['flat'])
+        for hashtag in self.parse_hashtags():
+            targets.append(feed_manager.get_feed('hashtag', hashtag))
         return targets
+
+    #parse the text and get a list of mentions
+    def parse_mentions(self):
+        mentions = [slugify(i) for i in self.text.split() if i.startswith("@")]
+        return User.objects.filter(username__in=mentions)
     
 class Follow(models.Model):
     user = models.ForeignKey('auth.User', related_name='friends')
